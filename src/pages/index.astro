@@ -1,17 +1,48 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <main class="relative flex min-h-svh flex-col overflow-hidden px-6 py-6 sm:px-10 sm:py-8">
+    <div class="pointer-events-none absolute inset-0 opacity-35" aria-hidden="true">
+      <div class="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-ink/10"></div>
+      <div class="absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-ink/10"></div>
+    </div>
+
+    <header class="relative z-10 flex items-start justify-between text-[11px] uppercase tracking-[0.18em] sm:text-xs">
+      <a class="group inline-flex items-center gap-3" href="/" aria-label="Studio API home">
+        <img class="h-7 w-7 transition-transform duration-300 group-hover:scale-110" src="/logo.svg" alt="" width="28" height="28" />
+        <span>Studio API</span>
+      </a>
+      <span class="hidden text-muted sm:block">[ independent / digital ]</span>
+    </header>
+
+    <section class="relative z-10 flex flex-1 items-center justify-center py-20">
+      <div class="w-full max-w-4xl">
+        <p class="mb-8 text-xs uppercase tracking-[0.2em] text-muted sm:mb-10 sm:text-sm">
+          <span class="text-accent">01</span> — unified API infrastructure
+        </p>
+
+        <h1 class="max-w-3xl text-[clamp(2.7rem,8vw,7.75rem)] font-medium leading-[0.9] tracking-[-0.075em]">
+          <span class="mb-2 block whitespace-nowrap text-[clamp(1.45rem,4.5vw,4.5rem)] tracking-[-0.055em]">Many sources.</span>
+          <span class="block text-accent">One API.</span>
+        </h1>
+
+        <div class="mt-10 max-w-xl border-l-2 border-accent pl-4 text-sm leading-relaxed text-muted sm:mt-14 sm:pl-5 sm:text-base">
+          <p>
+            Access APIs from multiple providers through one simple,
+            consistent, developer-friendly platform.
+          </p>
+          <p class="mt-2 text-ink">
+            <span aria-hidden="true">&gt; </span><span>connecting sources...</span><span class="cursor-blink" aria-hidden="true"></span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="relative z-10 flex items-end justify-between border-t border-ink/15 pt-4 text-[10px] uppercase tracking-[0.16em] text-muted sm:text-xs">
+      <span>© {new Date().getFullYear()} Studio API</span>
+      <span class="text-right">est. 2026<br />online soon</span>
+    </footer>
+  </main>
+</BaseLayout>
