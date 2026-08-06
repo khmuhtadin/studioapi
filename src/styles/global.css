@@ -45,6 +45,11 @@ body {
   color: var(--color-paper);
 }
 
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
 h1, h2, h3 {
   text-wrap: balance;
 }
@@ -186,6 +191,22 @@ html.intro-done .reveal-5 {
   padding: 0.9rem 1.35rem;
   transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
   white-space: nowrap;
+  min-height: 44px;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+@media (max-width: 420px) {
+  .btn {
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+.btn:focus-visible {
+  outline-color: var(--color-accent);
 }
 
 .btn-primary {
@@ -242,6 +263,14 @@ html.intro-done .reveal-5 {
   transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
 }
 
+.tile:focus-within {
+  border-color: rgba(201, 242, 75, 0.6);
+}
+
+.tile:active {
+  transform: scale(0.985);
+}
+
 .tile:hover {
   border-color: rgba(201, 242, 75, 0.45);
   background: linear-gradient(180deg, rgba(201, 242, 75, 0.07), rgba(244, 241, 232, 0.01));
@@ -261,9 +290,23 @@ html.intro-done .reveal-5 {
   transition: color 0.15s ease, border-color 0.15s ease;
 }
 
+@media (max-width: 640px) {
+  .source-chip {
+    white-space: normal;
+    text-align: center;
+  }
+}
+
 .source-chip:hover {
   color: var(--color-ink);
   border-color: rgba(201, 242, 75, 0.5);
+}
+
+@media (max-width: 640px) {
+  .source-chip {
+    white-space: normal;
+    text-align: center;
+  }
 }
 
 /* Code block copy */
@@ -279,10 +322,24 @@ html.intro-done .reveal-5 {
   margin: 0;
   padding: 1.25rem;
   overflow-x: auto;
+  max-width: 100%;
   font-family: var(--font-mono);
   font-size: 12.5px;
   line-height: 1.8;
   color: #d8d4c8;
+}
+
+.code-wrap pre code {
+  white-space: pre;
+  display: block;
+  min-width: max-content;
+}
+
+@media (max-width: 640px) {
+  .code-wrap pre {
+    font-size: 11.5px;
+    padding: 1rem;
+  }
 }
 
 .copy-btn {
@@ -299,6 +356,7 @@ html.intro-done .reveal-5 {
   padding: 0.35rem 0.6rem;
   background: rgba(244, 241, 232, 0.04);
   transition: color 0.15s ease, border-color 0.15s ease;
+  min-height: 30px;
 }
 
 .copy-btn:hover {
@@ -324,6 +382,10 @@ html.intro-done .reveal-5 {
   padding-right: 1.5rem;
 }
 
+[id] {
+  scroll-margin-top: 88px;
+}
+
 @media (min-width: 640px) {
   .container-wide {
     padding-left: 2rem;
@@ -336,6 +398,12 @@ html.intro-done .reveal-5 {
   line-height: 0.95;
   letter-spacing: -0.04em;
   font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .display {
+    letter-spacing: -0.025em;
+  }
 }
 
 .display-2 {
