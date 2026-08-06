@@ -1,0 +1,36 @@
+---
+const curlSnippet = `curl https://api.studioapi.dev/v1/wilayah/provinsi \\
+  -H "x-api-key: $STUDIO_KEY"`;
+
+const agentSnippet = `from studio import Agent
+
+agent = Agent(api_key=os.environ["STUDIO_KEY"])
+result = agent.call("gempa", params={"limit": 5})
+print(result.json)`;
+---
+
+<section id="code" class="section">
+  <div class="container-wide py-20 lg:py-28">
+    <div class="max-w-2xl">
+      <p class="kicker reveal"><span class="idx">04</span> — developer experience</p>
+      <h2 class="display-2 mt-5 reveal reveal-1">
+        From <span class="accent-text">curl</span> to agent in one key
+      </h2>
+      <p class="mt-5 text-base leading-relaxed text-muted reveal reveal-2">
+        The same contract works for a shell script, a dashboard, or an
+        autonomous agent. Copy-paste to start; scale without migrating.
+      </p>
+    </div>
+
+    <div class="mt-12 grid gap-5 lg:grid-cols-2">
+      <div class="code-wrap reveal reveal-2">
+        <button class="copy-btn" data-copy={curlSnippet} type="button">Copy</button>
+        <pre><code>{curlSnippet}</code></pre>
+      </div>
+      <div class="code-wrap reveal reveal-3">
+        <button class="copy-btn" data-copy={agentSnippet} type="button">Copy</button>
+        <pre><code>{agentSnippet}</code></pre>
+      </div>
+    </div>
+  </div>
+</section>

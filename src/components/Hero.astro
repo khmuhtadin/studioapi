@@ -1,0 +1,49 @@
+<section class="relative overflow-hidden">
+  <div class="container-wide grid min-h-[calc(100svh-4rem)] items-center gap-14 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:py-24">
+    <div>
+      <p class="kicker reveal"><span class="idx">01</span> — unified API infrastructure</p>
+      <h1 class="display mt-6 reveal reveal-1">
+        One API.
+        <span class="block accent-text">Every source.</span>
+      </h1>
+      <p class="mt-7 max-w-xl text-base leading-relaxed text-muted reveal reveal-2 sm:text-lg">
+        StudioAPI turns 30+ Indonesian public data sources into one consistent,
+        agent-ready API. One key, one contract, one bill — for your product
+        and every AI agent you ship.
+      </p>
+      <div class="mt-9 flex flex-wrap items-center gap-4 reveal reveal-3">
+        <a href="#cta" class="btn btn-primary">Get API Access</a>
+        <a href="#code" class="btn btn-ghost">See the code</a>
+      </div>
+      <div class="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-[11px] uppercase tracking-[0.14em] text-faint reveal reveal-4">
+        <span>30+ sources</span>
+        <span class="h-3 w-px bg-line" aria-hidden="true"></span>
+        <span>&lt;40ms p95</span>
+        <span class="h-3 w-px bg-line" aria-hidden="true"></span>
+        <span>1 key</span>
+      </div>
+    </div>
+
+    <div class="reveal reveal-2" aria-hidden="false">
+      <div class="tile overflow-hidden p-0" role="img" aria-label="Terminal showing an AI agent calling the StudioAPI unified API">
+        <div class="flex items-center gap-2 border-b border-line px-4 py-3">
+          <span class="h-2.5 w-2.5 rounded-full bg-faint/60"></span>
+          <span class="h-2.5 w-2.5 rounded-full bg-faint/40"></span>
+          <span class="h-2.5 w-2.5 rounded-full bg-faint/30"></span>
+          <span class="ml-3 font-mono text-[10px] uppercase tracking-[0.14em] text-faint">studio · agent console</span>
+        </div>
+        <div class="terminal p-6">
+          <p><span class="t-prompt"></span><span class="t-mut">studio run</span> <span class="t-key">"gempa terbaru"</span></p>
+          <p class="t-dim">&nbsp;&nbsp;● routing across 42 connected sources</p>
+          <p class="t-dim">&nbsp;&nbsp;● picked BMKG · cached · fresh 4s ago</p>
+          <p class="t-ok">&nbsp;&nbsp;✓ 200 OK · 34ms</p>
+          <p class="t-mut">&nbsp;&#123;</p>
+          <p class="t-mut">&nbsp;&nbsp;"data": [ ... 15 earthquakes ... ],</p>
+          <p class="t-mut">&nbsp;&nbsp;"meta": &#123; "source": "BMKG", "cached": true &#125;</p>
+          <p class="t-mut">&nbsp;&#125;</p>
+          <p><span class="t-prompt"></span><span class="t-mut">next:</span> <span class="t-key">"cuaca 4 jam ke depan"</span><span class="cursor-blink"></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

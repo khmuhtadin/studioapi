@@ -1,0 +1,31 @@
+---
+const sources = [
+  'Wilayah', 'Cuaca', 'Gempa', 'Kurs BI', 'Halal', 'BPOM', 'Hijriah',
+  'Sholat', 'KBBI', 'Alkitab', 'Quran', 'OJK', 'Sekolah', 'Kampus',
+  'Rumah Sakit', 'Kodepos', 'Plates', 'UMP', 'Libur', 'Astronomi',
+  'Validasi', 'Util', 'Peringatan Dini', 'Kurs',
+];
+---
+
+<section id="sources" class="section">
+  <div class="container-wide py-20 lg:py-28">
+    <div class="max-w-2xl">
+      <p class="kicker reveal"><span class="idx">02</span> — the catalogue</p>
+      <h2 class="display-2 mt-5 reveal reveal-1">
+        One contract for <span class="accent-text">Indonesia's data</span>
+      </h2>
+      <p class="mt-5 text-base leading-relaxed text-muted reveal reveal-2">
+        Every source normalized to the same schema, pagination, errors, and
+        response envelope. Add sources without touching your integration —
+        the contract never changes.
+      </p>
+    </div>
+
+    <div class="mt-12 flex flex-wrap gap-2.5 reveal reveal-3">
+      {sources.map((s) => (
+        <span class="source-chip">{s}</span>
+      ))}
+      <span class="source-chip accent-text">+ bring your own</span>
+    </div>
+  </div>
+</section>

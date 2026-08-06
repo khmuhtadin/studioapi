@@ -1,0 +1,20 @@
+---
+const stats = [
+  { value: '30+', label: 'connected sources', note: 'and growing monthly' },
+  { value: '<40ms', label: 'p95 response', note: 'cached, edge-served' },
+  { value: '99.99%', label: 'uptime target', note: 'multi-source failover' },
+  { value: '1', label: 'key to rule them all', note: 'scoped per team & agent' },
+];
+---
+
+<section class="section">
+  <div class="container-wide grid gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+    {stats.map((s, i) => (
+      <div class={`bg-panel p-8 ${i === 0 ? 'reveal' : `reveal reveal-${i + 1}`}`}>
+        <p class="display text-4xl accent-text sm:text-5xl">{s.value}</p>
+        <p class="mt-3 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-ink">{s.label}</p>
+        <p class="mt-1 text-sm text-muted">{s.note}</p>
+      </div>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,50 @@
+---
+const features = [
+  {
+    tag: 'Billing',
+    title: 'One bill, every usage',
+    body: 'Credits, volume pricing, and on-chain x402 for agents — consolidated into one dashboard with spend per key, per team, per agent.',
+  },
+  {
+    tag: 'Observability',
+    title: 'Know every call',
+    body: 'Per-key dashboards, latency and error budgets, source health, and alerting. Debug a bad response in seconds, not days.',
+  },
+  {
+    tag: 'Security',
+    title: 'Enterprise guardrails',
+    body: 'Scoped keys, SSO/SAML, IP allowlists, key rotation, and full audit logs. Data encrypted in transit and at rest.',
+  },
+  {
+    tag: 'Scale',
+    title: 'Built for B2B SaaS',
+    body: 'Multi-source failover, edge caching, regional pinning, and SLAs that your own customers can rely on.',
+  },
+];
+---
+
+<section id="platform" class="section">
+  <div class="container-wide py-20 lg:py-28">
+    <div class="max-w-2xl">
+      <p class="kicker reveal"><span class="idx">05</span> — the platform</p>
+      <h2 class="display-2 mt-5 reveal reveal-1">
+        Everything a <span class="accent-text">B2B SaaS</span> needs
+      </h2>
+      <p class="mt-5 text-base leading-relaxed text-muted reveal reveal-2">
+        StudioAPI is not a data dump. It is an operational platform: billing,
+        observability, security, and scale — so you can resell data as a
+        product, not a liability.
+      </p>
+    </div>
+
+    <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {features.map((f, i) => (
+        <div class={`tile flex flex-col gap-3 p-6 reveal reveal-${Math.min(i + 1, 5)}`}>
+          <span class="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] accent-text">{f.tag}</span>
+          <h3 class="text-lg font-semibold leading-snug">{f.title}</h3>
+          <p class="text-sm leading-relaxed text-muted">{f.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

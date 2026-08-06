@@ -1,0 +1,65 @@
+---
+const features = [
+  {
+    tag: 'MCP-native',
+    title: 'Every endpoint is an MCP tool',
+    body: 'Point any MCP client at StudioAPI and every source becomes a callable tool with schemas, descriptions, and safe defaults. Zero glue code.',
+  },
+  {
+    tag: 'Function calling',
+    title: 'OpenAI-compatible tool schemas',
+    body: 'Consume the same API as native tool calls from OpenAI, Anthropic, or any function-calling model. Plug in one adapter, use every source.',
+  },
+  {
+    tag: 'Failover',
+    title: 'Autonomous retries & fallback',
+    body: 'If a source is down or stale, StudioAPI reroutes to the freshest alternative and returns one consistent response — your agent never sees the incident.',
+  },
+  {
+    tag: 'Streaming',
+    title: 'SSE for long agent runs',
+    body: 'Stream partial results and progress events for multi-source queries, so agents can act on the first useful signal instead of waiting for the last.',
+  },
+  {
+    tag: 'x402',
+    title: 'Pay-per-call for agents',
+    body: 'Agents pay per request on-chain with x402 when quotas run out. Machine-to-machine billing without invoices, cards, or human intervention.',
+  },
+  {
+    tag: 'Governance',
+    title: 'Scoped keys, budgets, audit',
+    body: 'Issue keys per agent with hard budgets and rate ceilings, then audit every call back to the agent that made it. Compliance without friction.',
+  },
+];
+---
+
+<section id="agents" class="section">
+  <div class="container-wide py-20 lg:py-28">
+    <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+      <div class="lg:sticky lg:top-24 lg:self-start">
+        <p class="kicker reveal"><span class="idx">03</span> — the agentic layer</p>
+        <h2 class="display-2 mt-5 reveal reveal-1">
+          Built for agents,<br /><span class="accent-text">not just apps.</span>
+        </h2>
+        <p class="mt-5 max-w-md text-base leading-relaxed text-muted reveal reveal-2">
+          AI agents need data that is reliable, typed, and cheap to call.
+          StudioAPI is the middle layer that gives them all three — with
+          billing, observability, and governance built in.
+        </p>
+        <div class="mt-8 reveal reveal-3">
+          <a href="#cta" class="btn btn-primary">Build an agent</a>
+        </div>
+      </div>
+
+      <div class="grid gap-4 sm:grid-cols-2">
+        {features.map((f, i) => (
+          <div class={`tile flex flex-col gap-3 p-6 ${i < 2 ? '' : ''}`}>
+            <span class="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] accent-text">{f.tag}</span>
+            <h3 class="text-lg font-semibold leading-snug">{f.title}</h3>
+            <p class="text-sm leading-relaxed text-muted">{f.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

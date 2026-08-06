@@ -1,0 +1,27 @@
+# StudioAPI
+
+> Unified API infrastructure. 30+ Indonesian public data sources normalized behind one consistent, agent-ready API. One key, one contract, one bill — for products and AI agents.
+
+## Core facts
+
+- Product: StudioAPI (studioapi.dev)
+- Tagline: Many sources. One API. Every agent.
+- Model: B2B SaaS — free developer tier, usage-based Scale tier, custom Enterprise tier
+- Payment: credits, volume pricing, and x402 on-chain pay-per-call for agents
+- Integration: REST + MCP-native + OpenAI-compatible function calling
+
+## Links
+
+- Landing page: https://studioapi.dev
+- Dashboard: https://app.studioapi.dev
+- Documentation: https://docs.studioapi.dev
+- Source: https://github.com/khmuhtadin/studioapi
+
+## Capabilities for agents
+
+- Every endpoint is exposed as an MCP tool.
+- Tool schemas are OpenAI/Anthropic function-calling compatible.
+- Multi-source failover returns one consistent response.
+- SSE streaming is available for long agent runs.
+- x402 receipts let agents pay per request on-chain.
+- Keys can be scoped per agent with budgets and audit logs.

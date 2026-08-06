@@ -1,0 +1,62 @@
+<footer class="section">
+  <div class="container-wide py-12">
+    <div class="grid gap-10 md:grid-cols-[1.2fr_1fr_1fr_1fr]">
+      <div>
+        <a href="/" class="inline-flex items-center gap-3" aria-label="StudioAPI home">
+          <img src="/logo.svg" alt="" width="24" height="24" />
+          <span class="font-mono text-sm font-semibold uppercase tracking-[0.16em]">StudioAPI</span>
+        </a>
+        <p class="mt-4 max-w-xs text-sm leading-relaxed text-muted">
+          One unified, agent-ready API for Indonesia's public data — and any
+          source you bring.
+        </p>
+      </div>
+      <div>
+        <p class="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-faint">Product</p>
+        <ul class="mt-4 flex flex-col gap-2.5 text-sm">
+          <li><a href="#platform" class="text-muted transition-colors hover:text-ink">Platform</a></li>
+          <li><a href="#sources" class="text-muted transition-colors hover:text-ink">Sources</a></li>
+          <li><a href="#agents" class="text-muted transition-colors hover:text-ink">For Agents</a></li>
+          <li><a href="#pricing" class="text-muted transition-colors hover:text-ink">Pricing</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-faint">Developers</p>
+        <ul class="mt-4 flex flex-col gap-2.5 text-sm">
+          <li><a href="#code" class="text-muted transition-colors hover:text-ink">Quickstart</a></li>
+          <li><a href="https://docs.studioapi.dev" class="text-muted transition-colors hover:text-ink">Documentation</a></li>
+          <li><a href="/llms.txt" class="text-muted transition-colors hover:text-ink">llms.txt</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-faint">Company</p>
+        <ul class="mt-4 flex flex-col gap-2.5 text-sm">
+          <li><a href="https://status.studioapi.dev" class="text-muted transition-colors hover:text-ink">Status</a></li>
+          <li><a href="https://github.com/khmuhtadin/studioapi" class="text-muted transition-colors hover:text-ink">GitHub</a></li>
+          <li><a href="mailto:hello@studioapi.dev" class="text-muted transition-colors hover:text-ink">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-12 flex flex-col gap-3 border-t border-line pt-6 font-mono text-[11px] uppercase tracking-[0.14em] text-faint sm:flex-row sm:items-center sm:justify-between">
+      <span>© {new Date().getFullYear()} Studio API</span>
+      <span>many sources · one API · every agent</span>
+    </div>
+  </div>
+</footer>
+
+<script is:inline>
+  document.querySelectorAll('.copy-btn').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const code = btn.getAttribute('data-copy') ?? '';
+      try {
+        await navigator.clipboard.writeText(code);
+        btn.textContent = 'Copied';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = 'Copy';
+          btn.classList.remove('copied');
+        }, 1600);
+      } catch {}
+    });
+  });
+</script>
