@@ -1,0 +1,53 @@
+# StudioAPI Documentation
+
+> One unified, agent-ready API for 30+ Indonesian public data sources. This file is a plain-text index of the documentation for LLM ingestion.
+
+## Product
+
+- StudioAPI unifies 30+ sources (wilayah, cuaca, gempa, kurs, kurs BI, halal, BPOM, KBBI, Quran, Alkitab, OJK, sekolah, kampus, rumah sakit, kodepos, plates, UMP, libur, sholat, hijriah, astronomi, validasi, util) behind one REST contract.
+- Base URL: https://use.studioapi.dev
+- Dashboard: https://app.studioapi.dev
+- Landing: https://studioapi.dev
+- Repo: https://github.com/khmuhtadin/studioapi
+
+## Auth
+
+- Data endpoints: `x-api-key` header (SHA-256 hashed at rest).
+- Account endpoints: `Authorization: Bearer <JWT>` (HS256, 7-day TTL).
+- OAuth: Google/GitHub, callback at https://use.studioapi.dev/auth/{provider}/callback.
+- Bot protection: Cloudflare Turnstile on register/login (action `turnstile-spin-v2`).
+- Agent payments: x402 (Base + USDC) when quota and credits are exhausted.
+
+## Key endpoints
+
+See the full reference at https://docs.studioapi.dev/reference/... for every endpoint. Highlights:
+
+- GET /api/v1/wilayah/{provinsi|kabupaten|kecamatan|kelurahan} and /search
+- GET /api/v1/libur, /upcoming
+- GET /api/v1/sholat, /list-kota, /monthly
+- GET /api/v1/sekolah, /kampus, /rumah-sakit (+ /search)
+- GET /api/v1/gempa/{terkini|dirasakan|history}
+- GET /api/v1/kodepos (+ /search)
+- GET /api/v1/plates, /quran/list-surah, /surah/{id}
+- GET /api/v1/ump
+- GET /api/v1/cuaca (+ /search), /peringatan-dini
+- GET /api/v1/kurs/{latest|history}, /kurs-bi/{latest|history}
+- GET /api/v1/alkitab/{books|passage|verse|search}
+- GET /api/v1/ojk/{products|apps|illegals}
+- GET /api/v1/kbbi/{search|word|random}
+- GET/POST /api/v1/validasi/*, POST /api/v1/util/*
+- GET /api/v1/halal, /bpom, /hijriah, /astronomi/*
+
+## Errors
+
+Envelope: `{"error":{"code","message"}}`. Common: MISSING_API_KEY(401), INVALID_API_KEY(401), RATE_LIMIT_EXCEEDED(429), QUOTA_EXCEEDED(402), INSUFFICIENT_CREDITS(402), PAYMENT_REQUIRED(402), VALIDATION_ERROR(400), NOT_FOUND(404), UPSTREAM_ERROR(502).
+
+## Docs navigation
+
+- Getting started: /getting-started
+- Auth: /authentication/api-keys
+- Concepts: /concepts/response-format
+- Reference: /reference/wilayah
+- Troubleshooting: /troubleshooting
+
+Raw Markdown for any page: /md/<slug> (e.g. /md/reference/wilayah).

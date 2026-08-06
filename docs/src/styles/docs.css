@@ -1,0 +1,110 @@
+/* StudioAPI docs — brand-aligned Starlight theme.
+   Dark, lime-accent, Bricolage Grotesque display + IBM Plex Mono code. */
+:root {
+  --sl-color-accent-high: #d9ff70;
+  --sl-color-accent: #c9f24b;
+  --sl-color-accent-low: #22300a;
+  --sl-color-bg: #0a0a0b;
+  --sl-color-bg-nav: #0d0d0f;
+  --sl-color-bg-sidebar: #0d0d0f;
+  --sl-color-bg-inline: #161618;
+  --sl-color-bg-hair: #26262a;
+  --sl-color-text: #f4f1e8;
+  --sl-color-text-accent: #d9ff70;
+  --sl-color-text-invert: #0a0a0b;
+  --sl-color-text-muted: #9b978d;
+  --sl-color-hairline: #242427;
+  --sl-color-hairline-light: #2c2c30;
+  --sl-color-border: #2a2a2e;
+  --sl-color-black: #0a0a0b;
+  --sl-color-gray-6: #d5d2c9;
+  --sl-color-gray-5: #b5b1a6;
+  --sl-color-gray-4: #9b978d;
+  --sl-color-gray-3: #6b685f;
+  --sl-color-gray-2: #3b3b40;
+  --sl-color-gray-1: #232327;
+
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+}
+
+:root[data-theme="light"] {
+  --sl-color-accent-high: #3c4d0b;
+  --sl-color-accent: #6f8f12;
+  --sl-color-accent-low: #eef7d2;
+  --sl-color-bg: #fbfaf6;
+  --sl-color-bg-nav: #f4f2ea;
+  --sl-color-bg-sidebar: #f4f2ea;
+  --sl-color-bg-inline: #efede5;
+  --sl-color-text: #1b1b1d;
+  --sl-color-text-accent: #4c6310;
+  --sl-color-text-muted: #5d5a53;
+  --sl-color-hairline: #e2dfd5;
+  --sl-color-hairline-light: #ece9e0;
+  --sl-color-border: #d9d5ca;
+}
+
+.site-title {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.sl-markdown-content h1,
+.sl-markdown-content h2,
+.sl-markdown-content h3 {
+  font-weight: 650;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.sl-markdown-content h1 {
+  font-size: 2.2rem;
+}
+
+code {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+/* Doc action buttons */
+.doc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--sl-color-hairline);
+}
+
+.doc-actions a,
+.doc-actions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--sl-color-text);
+  background: var(--sl-color-bg-inline);
+  border: 1px solid var(--sl-color-hairline);
+  border-radius: 999px;
+  padding: 0.55rem 0.9rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 120ms ease, color 120ms ease, background 120ms ease;
+}
+
+.doc-actions a:hover,
+.doc-actions button:hover {
+  border-color: var(--sl-color-accent);
+  color: var(--sl-color-accent-high);
+}
+
+.doc-actions button.copied {
+  border-color: var(--sl-color-accent);
+  color: var(--sl-color-accent-high);
+}
+
+.doc-actions kbd {
+  font-family: inherit;
+  color: var(--sl-color-text-muted);
+}
