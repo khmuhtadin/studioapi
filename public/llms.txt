@@ -13,8 +13,8 @@
 ## Links
 
 - Landing page: https://studioapi.dev
-- Dashboard: https://app.studioapi.dev
-- Documentation: https://docs.studioapi.dev
+- Dashboard: https://studioapi-app.pages.dev
+- Documentation: https://studioapi-docs.pages.dev
 - Source: https://github.com/khmuhtadin/studioapi
 
 ## Capabilities for agents

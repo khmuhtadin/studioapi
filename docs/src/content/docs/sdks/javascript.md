@@ -8,7 +8,7 @@ There is no official SDK package yet — the API is a plain HTTPS contract, so t
 ## Minimal client
 
 ```ts
-const BASE = 'https://use.studioapi.dev/api/v1';
+const BASE = 'https://waiting-weekly-boys-masters.trycloudflare.com/api/v1';
 
 export async function api<T>(path: string, opts: { key: string; init?: RequestInit }) {
   const res = await fetch(`${BASE}${path}`, {

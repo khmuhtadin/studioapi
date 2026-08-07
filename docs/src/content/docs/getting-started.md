@@ -5,7 +5,7 @@ description: Create an API key and make your first StudioAPI request in under tw
 
 ## 1. Create an account
 
-1. Open the [dashboard](https://app.studioapi.dev/register).
+1. Open the [dashboard](https://studioapi-app.pages.dev/register).
 2. Register with email + password or continue with Google / GitHub.
 3. Verify your email (a link is sent to your inbox).
 
@@ -16,13 +16,13 @@ After verification, open **API Keys** in the dashboard and create a key. The raw
 ## 3. Make your first request
 
 ```bash
-curl https://use.studioapi.dev/api/v1/wilayah/provinsi \
+curl https://waiting-weekly-boys-masters.trycloudflare.com/api/v1/wilayah/provinsi \
   -H "x-api-key: $STUDIOAPI_KEY"
 ```
 
 ```js
 // JavaScript
-const res = await fetch('https://use.studioapi.dev/api/v1/wilayah/provinsi', {
+const res = await fetch('https://waiting-weekly-boys-masters.trycloudflare.com/api/v1/wilayah/provinsi', {
   headers: { 'x-api-key': process.env.STUDIOAPI_KEY },
 });
 const body = await res.json();
@@ -33,7 +33,7 @@ const body = await res.json();
 import requests
 
 res = requests.get(
-    "https://use.studioapi.dev/api/v1/wilayah/provinsi",
+    "https://waiting-weekly-boys-masters.trycloudflare.com/api/v1/wilayah/provinsi",
     headers={"x-api-key": os.environ["STUDIOAPI_KEY"]},
 )
 data = res.json()

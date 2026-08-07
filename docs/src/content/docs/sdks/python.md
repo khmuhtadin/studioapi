@@ -8,7 +8,7 @@ import os
 import requests
 
 KEY = os.environ["STUDIOAPI_KEY"]
-BASE = "https://use.studioapi.dev/api/v1"
+BASE = "https://waiting-weekly-boys-masters.trycloudflare.com/api/v1"
 
 def api(path: str, **params):
     res = requests.get(f"{BASE}{path}", headers={"x-api-key": KEY}, params=params, timeout=15)

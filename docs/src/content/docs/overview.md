@@ -14,8 +14,8 @@ StudioAPI turns 30+ Indonesian public data sources into one consistent, agent-re
 
 ## Core facts
 
-- API base URL: `https://use.studioapi.dev`
-- Dashboard: `https://app.studioapi.dev`
+- API base URL: `https://waiting-weekly-boys-masters.trycloudflare.com`
+- Dashboard: `https://studioapi-app.pages.dev`
 - Product home: `https://studioapi.dev`
 - Status: `https://status.studioapi.dev`
 - Repository: `https://github.com/khmuhtadin/studioapi`

@@ -39,7 +39,7 @@ All endpoints require `Authorization: Bearer <jwt>`.
 ## Example
 
 ```bash
-curl https://use.studioapi.dev/auth/me \
+curl https://waiting-weekly-boys-masters.trycloudflare.com/auth/me \
   -H "Authorization: Bearer $TOKEN"
 ```
 
