@@ -1,0 +1,3 @@
+# Canonical host: apex only. www redirects permanently to the apex so search
+# engines and users never see duplicate content on the landing page.
+www.studioapi.dev/* https://studioapi.dev/:splat 301
