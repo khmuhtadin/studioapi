@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Privacy Policy — StudioAPI" description="How StudioAPI handles your data.">
+  <main class="content">
+    <div class="container-wide py-20 lg:py-28">
+      <div class="mx-auto max-w-3xl">
+        <p class="kicker">Legal</p>
+        <h1 class="display-2 mt-5">Privacy Policy</h1>
+        <p class="mt-4 text-muted">Last updated: 2026-08-08</p>
+
+        <div class="docs-content mt-10">
+          <h2>1. What we collect</h2>
+          <p>Account data (email, name, password hash), API usage metadata (endpoint, status, timestamps, IP address), and billing records needed to operate the service.</p>
+
+          <h2>2. What we do not collect</h2>
+          <p>We do not store raw API keys — only SHA-256 hashes. We do not sell your personal data.</p>
+
+          <h2>3. How we use data</h2>
+          <p>To operate and secure the platform, enforce quotas and rate limits, send transactional email, and maintain audit logs for security.</p>
+
+          <h2>4. Third parties</h2>
+          <p>We use infrastructure and service providers (hosting, email, payments, bot protection) that process data on our behalf under their own terms. Upstream data providers receive only the requests required to serve their data.</p>
+
+          <h2>5. Retention</h2>
+          <p>Account data is retained while your account is active. Raw usage logs are pruned after a retention window; monthly aggregates are kept for billing and analytics.</p>
+
+          <h2>6. Your rights</h2>
+          <p>You may request access, correction, or deletion of your personal data by contacting us. Deletion may remove access to services that require an account.</p>
+
+          <h2>7. Security</h2>
+          <p>Traffic is encrypted in transit, secrets are stored as hashes or in environment-managed secret stores, and sensitive admin actions are audited.</p>
+
+          <h2>8. Contact</h2>
+          <p>Privacy questions: <a href="mailto:hello@studioapi.dev">hello@studioapi.dev</a>.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
