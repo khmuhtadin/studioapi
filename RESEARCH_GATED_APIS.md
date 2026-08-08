@@ -6,6 +6,28 @@ integrate and can be resold or embedded as StudioAPI products.
 Ranking criteria: real value to B2B customers, ease of integration, clear
 access path (gated but reachable), and a viable resell/commission model.
 
+## Resell / ToS verification (verified 2026-08-08)
+
+This section records what the providers' own pages/terms say about reselling.
+Where a term is not public, treat the provider as "needs written agreement"
+until confirmed by their sales/legal team.
+
+| Provider | Resell allowed? | Evidence | Action needed |
+| --- | --- | --- | --- |
+| RajaOngkir | ✅ Yes (markup model) | Homepage: "Bebas atur margin ongkir, dapatkan keuntungan per paket"; "API pengiriman dan API pembayaran untuk membangun platform sendiri" | Confirm current pricing/tier and API terms when onboarding |
+| WhatsApp Cloud API | ✅ Yes via Meta partners/BSP | Docs list "Mitra" (partners) and per-conversation pricing; official partner/BSP program is the sanctioned resell path | Enroll as WhatsApp Business Solution Provider (BSP) / Meta partner; per-message pricing applies |
+| Biteship | ⚠️ No by default | ToS (2026-06-14): "Anda tidak akan mereproduksi, menduplikasi, menyalin, memodifikasi, menjual, menjual kembali, atau mengeksploitasi bagian mana pun dari Platform dan/atau Produk dan/atau Layanan." | Requires explicit reseller/partner agreement with Biteship; do not resell without it |
+| Midtrans | ⚠️ Partner-based | Homepage/dashboard mention "Partner" and "mitra"; no public reseller clause found | Confirm with Midtrans partnership team; likely requires a written partnership/aggregator agreement |
+| Shopee Open Platform | ⚠️ Partner-based | Open Platform has a Service Market for third-party providers; terms not fully public | Apply as a service provider on Shopee Service Market; follow Open Platform approval |
+
+### OTA / travel (deprioritized)
+
+- Amadeus self-service decommissioned 2026-07-17; Enterprise APIs require a
+  sales agreement.
+- Skyscanner / Booking / Expedia / Agoda partner portals require partner
+  agreements (some behind captcha/login); no public self-service resell path.
+- Unofficial RapidAPI travel wrappers are not safe for reselling.
+
 ## 1. RajaOngkir (courier / shipping rates) — easiest & most resell-ready
 
 - **What**: Indonesian multi-courier rate calculator + shipment + tracking
