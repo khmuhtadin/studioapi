@@ -1,6 +1,6 @@
 # StudioAPI
 
-> Unified API infrastructure. 30+ Indonesian public data sources normalized behind one consistent, agent-ready API. One key, one contract, one bill — for products and AI agents.
+> Unified API infrastructure. Sources across public data, OTA, marketplaces, and more normalized behind one consistent, agent-ready API. One key, one contract, one bill — for products and AI agents.
 
 ## Core facts
 

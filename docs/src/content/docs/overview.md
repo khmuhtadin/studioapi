@@ -1,9 +1,9 @@
 ---
 title: Overview
-description: StudioAPI unifies 30+ Indonesian public data sources behind one consistent, agent-ready API.
+description: StudioAPI unifies sources across public data, OTA, marketplaces, and more behind one consistent, agent-ready API.
 ---
 
-StudioAPI turns 30+ Indonesian public data sources into one consistent, agent-ready API. One key, one contract, one bill — for your product and every AI agent you ship.
+StudioAPI turns sources across public data, OTA, marketplaces, and more into one consistent, agent-ready API. One key, one contract, one bill — for your product and every AI agent you ship.
 
 ## Why StudioAPI
 
@@ -22,7 +22,7 @@ StudioAPI turns 30+ Indonesian public data sources into one consistent, agent-re
 
 ## What you can build
 
-Wilayah, cuaca, gempa, kurs, kurs BI, halal, BPOM, KBBI, Quran, Alkitab, OJK, sekolah, kampus, rumah sakit, kodepos, plat nomor, UMP, libur, sholat, hijriah, astronomi, validasi format, and developer utilities — all behind `x-api-key`.
+Today the catalog covers 30+ Indonesian public data sources (wilayah, cuaca, gempa, kurs, kurs BI, halal, BPOM, KBBI, Quran, Alkitab, OJK, sekolah, kampus, rumah sakit, kodepos, plat nomor, UMP, libur, sholat, hijriah, astronomi, validasi format, and developer utilities). The platform is built to add more categories — OTA, marketplace APIs, and beyond — without changing the contract.
 
 ## Security & compliance
 

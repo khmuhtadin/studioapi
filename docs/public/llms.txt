@@ -1,10 +1,10 @@
 # StudioAPI Documentation
 
-> One unified, agent-ready API for 30+ Indonesian public data sources. This file is a plain-text index of the documentation for LLM ingestion.
+> One unified, agent-ready API for every source — public data, OTA, marketplaces, and more. This file is a plain-text index of the documentation for LLM ingestion.
 
 ## Product
 
-- StudioAPI unifies 30+ sources (wilayah, cuaca, gempa, kurs, kurs BI, halal, BPOM, KBBI, Quran, Alkitab, OJK, sekolah, kampus, rumah sakit, kodepos, plates, UMP, libur, sholat, hijriah, astronomi, validasi, util) behind one REST contract.
+- StudioAPI unifies sources across public data, OTA, marketplaces, and more behind one REST contract. Today's catalog: 30+ Indonesian public data sources (wilayah, cuaca, gempa, kurs, kurs BI, halal, BPOM, KBBI, Quran, Alkitab, OJK, sekolah, kampus, rumah sakit, kodepos, plates, UMP, libur, sholat, hijriah, astronomi, validasi, util).
 - Base URL: https://use.studioapi.dev
 - Dashboard: https://app.studioapi.dev
 - Landing: https://studioapi.dev

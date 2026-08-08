@@ -1,6 +1,6 @@
 ---
 title: StudioAPI Documentation
-description: One unified, agent-ready API for 30+ Indonesian public data sources.
+description: One unified, agent-ready API for every source — public data, OTA, marketplaces, and more.
 head:
   - tag: meta
     attrs:
