@@ -1,62 +1,39 @@
-# Required DNS / Cloudflare actions
+# DNS records to add in Cloudflare
 
-These are the only remaining production blockers. They require access to the
-Cloudflare DNS zone for `studioapi.dev` (the wrangler token used in this
-environment does not include `Zone.DNS` permission, and no broader token was
-available).
+Zone `studioapi.dev` is active in Cloudflare and all server-side wiring is
+ready. The automation token used in this environment cannot create DNS
+records (`Zone.DNS` permission missing, API returns code 10000). Add these
+records in Cloudflare Dashboard → `studioapi.dev` → DNS → Records:
 
-## 1. Landing page custom domain (`studioapi.dev`)
+| Type | Name | Content | Proxy | Purpose |
+| --- | --- | --- | --- | --- |
+| CNAME | `studioapi.dev` | `studioapi.pages.dev` | Proxied | Landing page |
+| CNAME | `www.studioapi.dev` | `studioapi.pages.dev` | Proxied | 301 → apex via `_redirects` |
+| CNAME | `docs.studioapi.dev` | `studioapi-docs.pages.dev` | Proxied | Documentation |
+| A | `use.studioapi.dev` | `168.110.208.0` | DNS only | API hostname |
 
-The landing page is deployed to the Cloudflare Pages project `studioapi`
-(live at `https://studioapi.pages.dev`). The custom domain
-`studioapi.dev` is attached to that project but its status is `pending`
-because DNS still points elsewhere.
+For `studioapi.dev` and `www`, if an existing A/AAAA record points at
+Cloudflare proxy IPs, replace it with the CNAME above (Cloudflare performs
+CNAME flattening for the apex).
 
-In the Cloudflare DNS zone for `studioapi.dev`:
+## After DNS propagates
 
-| Type | Name | Content | Proxy |
-| --- | --- | --- | --- |
-| CNAME | `studioapi.dev` | `studioapi.pages.dev` | Proxied |
-| CNAME | `www.studioapi.dev` | `studioapi.pages.dev` | Proxied |
+1. Landing (`studioapi.pages.dev`) and docs (`studioapi-docs.pages.dev`)
+   custom domains flip from `pending` to `active` automatically.
+2. `use.studioapi.dev` resolves to this server. Then request a Let's Encrypt
+   certificate for `use.studioapi.dev` in Nginx Proxy Manager (proxy host
+   id 24 already forwards to the API) and enable Force SSL.
+3. Update Google/GitHub OAuth Apps with callback
+   `https://use.studioapi.dev/auth/{google,github}/callback` if API traffic
+   should use the canonical `use` hostname (dashboard currently runs
+   same-origin on `https://app.studioapi.dev`, which is already live).
 
-Add a Bulk Redirect rule (or Pages redirect): `www.studioapi.dev/*` →
-`https://studioapi.dev/$1` (301). Pages serves the apex directly after the
-CNAME is added and the domain status flips to `active`.
+## Verification
 
-## 2. API hostname (`use.studioapi.dev`)
-
-The API is ready behind Nginx Proxy Manager (proxy host id 24 →
-`172.22.0.6:8080`, WebSockets on). DNS is the only missing piece:
-
-| Type | Name | Content | Proxy |
-| --- | --- | --- | --- |
-| A | `use.studioapi.dev` | `168.110.208.0` | DNS only |
-
-After DNS propagates, request a Let's Encrypt certificate in Nginx Proxy
-Manager for `use.studioapi.dev` (or add it via the dashboard) and enable
-`Force SSL`. The backend already defaults OAuth callback URIs to
-`https://use.studioapi.dev/auth/{google,github}/callback`.
-
-The old `api.studiooapi.dev` hostname does not exist in the codebase or DNS;
-no compatibility proxy is needed.
-
-## 3. Documentation hostname (`docs.studioapi.dev`)
-
-Documentation is deployed to the Pages project `studioapi-docs` (live at
-`https://studioapi-docs.pages.dev`). Add:
-
-| Type | Name | Content | Proxy |
-| --- | --- | --- | --- |
-| CNAME | `docs.studioapi.dev` | `studioapi-docs.pages.dev` | Proxied |
-
-Then attach `docs.studioapi.dev` as a custom domain on the
-`studioapi-docs` Pages project.
-
-## After DNS is fixed
-
-1. `curl https://studioapi.dev` should return the StudioAPI landing page
-   (title `StudioAPI — one unified API for every source`).
-2. `curl https://use.studioapi.dev/health` should return
-   `{"status":"ok",...}`.
-3. `curl https://docs.studioapi.dev/overview/` should return the docs page.
-4. `curl -I https://www.studioapi.dev` should 301 to `https://studioapi.dev/`.
+```sh
+curl -I https://www.studioapi.dev/          # 301 → https://studioapi.dev/
+curl https://studioapi.dev/                  # landing page
+curl https://docs.studioapi.dev/overview/    # docs
+curl https://use.studioapi.dev/health        # {"status":"ok",...}
+curl https://app.studioapi.dev/health        # already live
+```
