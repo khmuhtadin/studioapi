@@ -1,36 +1,4 @@
 ---
-const tiers = [
-  {
-    name: 'Developer',
-    price: '$0',
-    cadence: '/mo',
-    blurb: 'For prototypes, side projects, and first agents.',
-    features: ['1,000 calls / month', 'Every connected source', 'Community support', 'Rate limit 10 req/s'],
-    cta: 'Start free',
-    href: '#cta',
-    highlight: false,
-  },
-  {
-    name: 'Scale',
-    price: '$499',
-    cadence: '/mo',
-    blurb: 'For products and teams shipping to real users.',
-    features: ['1,000,000 calls / month', '99.9% uptime SLA', 'SSO / SAML', 'Priority support', 'Per-key budgets & alerts'],
-    cta: 'Start 14-day trial',
-    href: '#cta',
-    highlight: true,
-  },
-  {
-    name: 'Enterprise',
-    price: 'Custom',
-    cadence: '',
-    blurb: 'For platforms that resell data at scale.',
-    features: ['99.99% SLA', 'Dedicated infrastructure', 'Data residency & DPA', 'Volume pricing', 'Onboarding engineer'],
-    cta: 'Talk to sales',
-    href: '#cta',
-    highlight: false,
-  },
-];
 ---
 
 <section id="pricing" class="section">
@@ -38,34 +6,30 @@ const tiers = [
     <div class="max-w-2xl">
       <p class="kicker reveal"><span class="idx">06</span> — pricing</p>
       <h2 class="display-2 mt-5 reveal reveal-1">
-        Scale from <span class="accent-text">free to resell</span>
+        Pricing plans are being <span class="accent-text">finalised</span>
       </h2>
       <p class="mt-5 text-base leading-relaxed text-muted reveal reveal-2">
-        Start small, grow into an enterprise data product. No surprise
-        metering, no per-endpoint contracts.
+        We're crafting fair, transparent tiers that scale from individual
+        developers to enterprise platforms. Prices will be published soon.
       </p>
     </div>
 
-    <div class="mt-12 grid gap-5 lg:grid-cols-3">
-      {tiers.map((t, i) => (
-        <div class={`tile flex flex-col p-7 ${t.highlight ? 'border-accent/60 bg-accent/5' : ''} reveal reveal-${i + 2}`}>
-          <span class="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] muted">{t.name}</span>
-          <div class="mt-4 flex items-baseline gap-1">
-            <span class="display text-4xl sm:text-5xl">{t.price}</span>
-            <span class="font-mono text-xs text-muted">{t.cadence}</span>
-          </div>
-          <p class="mt-3 text-sm text-muted">{t.blurb}</p>
-          <ul class="mt-6 flex flex-col gap-2.5">
-            {t.features.map((f) => (
-              <li class="flex items-start gap-2.5 text-sm">
-                <span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true"></span>
-                <span>{f}</span>
-              </li>
-            ))}
-          </ul>
-          <a href={t.href} class={`btn mt-8 ${t.highlight ? 'btn-primary' : 'btn-ghost'} w-full`}>{t.cta}</a>
-        </div>
-      ))}
+    <div class="mt-12 reveal reveal-2">
+      <div class="tile mx-auto max-w-lg p-10 text-center">
+        <span class="inline-flex h-14 w-14 items-center justify-center rounded-full border border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 text-accent">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 6v6l4 2"/>
+          </svg>
+        </span>
+        <h3 class="mt-6 text-xl font-medium tracking-tight">Coming Soon</h3>
+        <p class="mt-3 text-sm leading-relaxed text-muted">
+          We're finalising pricing that works for developers, teams, and
+          platforms. In the meantime, all connected data sources are
+          available for free during the beta.
+        </p>
+        <a href="#cta" class="btn btn-primary mt-7">Join the waitlist</a>
+      </div>
     </div>
   </div>
 </section>
